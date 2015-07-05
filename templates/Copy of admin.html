@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h2><a href='/edit/'> New Post </a></h2>
+
+  <ul class="result">
+  {% for entry in result %}
+    <li><h2><a href='/edit/{{ entry[1] }}'> {{ entry[0] }} </a></h2>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}

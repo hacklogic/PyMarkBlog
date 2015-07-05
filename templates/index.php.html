@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <title>GitHub Gollum</title>
+
+    <link href="{{ url_for('static', filename='editor.css') }}"  media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" media="screen" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            margin: 5px;
+        }
+     .gollum-editor .gollum-editor-function-bar a span {
+  background-image: url({{ url_for('static', filename='iconsprite.png') }});
+  background-repeat: no-repeat;
+  display: block;
+  height: 25px;
+  overflow: hidden;
+  text-indent: -5000px;
+  width: 25px;
+}
+    </style>
+</head>
+
+<body>
+    <form action="" method="post">
+        <textarea id="editor"></textarea>
+        <input type="submit" value="Save" class="btn" />
+    </form>
+    
+    <script type="javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script type="javascript" src="{{ url_for('static', filename='formUploadProgress.js') }}"></script>
+    <script type="javascript" src="{{ url_for('static', filename='jquery.form.js') }}"></script>
+    <script type="javascript" src="{{ url_for('static', filename='jquery.gollum.js') }}"></script>
+    <script type="javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script type="javascript" src="{{ url_for('static', filename='gollum.markdown.js') }}"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#editor').gollum({
+                uploadURL: '/',
+                progressURL: '/',
+                uploadProgressName: '/',
+                progressId: 1,
+            });
+        });
+    </script>
+</body>
+</html>

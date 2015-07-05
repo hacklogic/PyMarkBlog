@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+    <form action="{{ url_for('update_post') }}" method="post" class="add-entry">
+      <dl>
+        <dt>Title:
+        <dd><input type="text" size="30" name="title" value="{{ result[1] }}">
+        <dt>Text:
+        <dd><textarea name="content" rows="5" cols="40"  >{{ result[2] }}</textarea>
+        <dd><input type="hidden" name="type"  value="update"  />
+        <dd><input type="hidden" name="id"  value="{{ result[0] }}"  />
+        <input type="submit" value="Save">
+        <a href="/admin"> <input type="button" value="Cancel" /></a>
+        <a href="/del/{{ result[0] }}"> <input type="button" value="Delete" /></a>
+      </dl>
+    </form>
+  {% endif %}
+
+{% endblock %}
+

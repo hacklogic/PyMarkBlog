@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <title>GitHub Gollum</title>
+
+    
+    <link href="{{ url_for('static', filename='editor.css') }}"  media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" media="screen" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            margin: 5px;
+        }
+        
+        #INPUT_1 {
+    background-position: 100% 50%;
+    box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 2px 0px inset;
+    color: rgb(51, 51, 51);
+    display: block;
+    height: 34px;
+    min-height: 34px;
+    overflow-wrap: break-word;
+    vertical-align: middle;
+    width: 980px;
+    word-wrap: break-word;
+    perspective-origin: 490px 17px;
+    transform-origin: 490px 17px;
+    background: rgb(255, 255, 255) none no-repeat scroll 100% 50% / auto padding-box border-box;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 3px 3px 3px 3px;
+    font: normal normal bold normal 13px/18.2000007629395px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 7px 8px;
+}/*#INPUT_1*/
+
+    #DIV_3 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    height: 44px;
+    overflow-wrap: break-word;
+    position: relative;
+    width: 980px;
+    word-wrap: break-word;
+    perspective-origin: 490px 22px;
+    transform-origin: 490px 22px;
+    background: rgb(247, 247, 247) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 3px 3px 0 0;
+    font: normal normal normal normal 13px/18.2000007629395px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 0px 0px 15px;
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 6px 10px 0px;
+}/*#DIV_1*/
+
+#NAV_2 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    height: 37px;
+    overflow-wrap: break-word;
+    width: 958px;
+    word-wrap: break-word;
+    perspective-origin: 479px 18.5px;
+    transform-origin: 479px 18.5px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 13px/18.2000007629395px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 0px 0px -1px;
+    outline: rgb(51, 51, 51) none 0px;
+}/*#NAV_2*/
+
+#A_1 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: inline-block;
+    height: 37px;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    width: 59px;
+    word-wrap: break-word;
+    perspective-origin: 29.5px 18.5px;
+    transform-origin: 29.5px 18.5px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border-top: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-bottom: 0px none rgb(221, 221, 221);
+    border-left: 1px solid rgb(221, 221, 221);
+    border-radius: 3px 3px 0 0;
+    font: normal normal normal normal 14px/20px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 8px 12px;
+}/*#A_3*/
+
+#A_2 {
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    display: inline-block;
+    height: 37px;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    width: 75px;
+    word-wrap: break-word;
+    perspective-origin: 37.5px 18.5px;
+    transform-origin: 37.5px 18.5px;
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    border-right: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 0px none rgb(102, 102, 102);
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    font: normal normal normal normal 14px/20px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    outline: rgb(102, 102, 102) none 0px;
+    padding: 8px 12px;
+}/*#A_4*/
+
+
+
+/*1111111111111111111111111111*/
+
+#DIV_1 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    height: 33px;
+    overflow-wrap: break-word;
+    width: 980px;
+    word-wrap: break-word;
+    perspective-origin: 490px 16.5px;
+    transform-origin: 490px 16.5px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 13px/18.2000007629395px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    outline: rgb(51, 51, 51) none 0px;
+}/*#DIV_1*/
+
+#DIV_2 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    float: right;
+    height: 26px;
+    overflow-wrap: break-word;
+    width: 199px;
+    word-wrap: break-word;
+    perspective-origin: 99.5px 13px;
+    transform-origin: 99.5px 13px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 13px/18.2000007629395px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 3px 0px 0px;
+    outline: rgb(51, 51, 51) none 0px;
+}/*#DIV_2*/
+
+#A_3 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 26px;
+    overflow-wrap: break-word;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 102px;
+    word-wrap: break-word;
+    perspective-origin: 51px 13px;
+    transform-origin: 51px 13px;
+    background: rgb(238, 238, 238) linear-gradient(rgb(252, 252, 252), rgb(238, 238, 238)) repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(213, 213, 213);
+    border-radius: 3px 3px 3px 3px;
+    font: normal normal bold normal 13px/20px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 0px 0px 0px 5px;
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 2px 10px;
+}/*#A_3*/
+
+#A_4 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 26px;
+    overflow-wrap: break-word;
+    position: relative;
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, 0.14902) 0px -1px 0px;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 87px;
+    word-wrap: break-word;
+    perspective-origin: 43.5px 13px;
+    transform-origin: 43.5px 13px;
+    background: rgb(96, 176, 68) linear-gradient(rgb(138, 221, 109), rgb(96, 176, 68)) repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(92, 169, 65);
+    border-radius: 3px 3px 3px 3px;
+    font: normal normal bold normal 13px/20px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 0px 0px 0px 5px;
+    outline: rgb(255, 255, 255) none 0px;
+    padding: 2px 10px;
+}/*#A_4*/
+
+#H1_5 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    height: 33px;
+    overflow-wrap: break-word;
+    width: 830px;
+    word-wrap: break-word;
+    perspective-origin: 415px 16.5px;
+    transform-origin: 415px 16.5px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 30px/33px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 0px 150px 0px 0px;
+    outline: rgb(51, 51, 51) none 0px;
+}/*#H1_5*/
+
+
+#DIV_s {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    height: 771px;
+    min-height: 345px;
+    overflow-wrap: break-word;
+    width: 980px;
+    word-wrap: break-word;
+    perspective-origin: 490px 385.5px;
+    transform-origin: 490px 385.5px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 13px/18.2000007629395px Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    outline: rgb(51, 51, 51) none 0px;
+}/*#DIV_s*/
+    
+    </style>
+</head>
+
+<body>
+
+	<div id="DIV_s">
+	
+    <div id="DIV_1">
+
+	<h1 id="H1_5">
+		Editing Home
+	</h1>
+</div>
+
+
+    <input id="INPUT_1" placeholder="Title" value="Home" type="text" />
+    <div id="DIV_3">
+	<nav id="NAV_2">
+		 <a href="#" id="A_1">Write</a> 
+		 <a href="#" id="A_2">Preview</a>
+	</nav>
+	</div>
+    <form action="" method="post">
+        <textarea id="editor"></textarea>
+        <input id="A_3" type="submit" value="Delete" class="btn" />
+        <input id="A_4" type="submit" value="Save" class="btn" />
+    </form>
+
+	</div>
+	<script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='formUploadProgress.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.form.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.gollum.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='gollum.markdown.js') }}"></script>
+    
+
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+        	console.log( "ready!" );
+            $('#editor').gollum({
+                uploadURL: '/static/php/fileUpload.php',
+                progressURL: '/static/php/fileProgress.php',
+                uploadProgressName: 'PHP_SESSION_UPLOAD_PROGRESS',
+                progressId: 1,
+            });
+        });
+
+    </script>
+
+</body>
+</html>

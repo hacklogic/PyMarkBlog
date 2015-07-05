@@ -1,0 +1,111 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>New Post</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="{{ url_for('static', filename='editor.css') }}"  media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" media="screen" rel="stylesheet" type="text/css" />
+     
+    <style type="text/css">
+        body {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+{% block body %}
+{% if session.logged_in %}
+  
+<body>
+
+<div class="container" >  
+
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Writing</a></li>
+    <li><a href="#tab2" data-toggle="tab" id="preview">Preview</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+ 
+    <form  class="form-horizontal"  action="/update" method="post">
+	
+		<label for="inputlg"><h2>Title</h2></label>
+		
+		<input class="input-xxlarge"  type="text" id="title" name="title">
+		<p class="help-block"></p>
+
+
+	    <textarea id="editor" name="content"></textarea>
+		<input type="hidden" name="type"  value="new" />
+        <input type="submit" value="Save" class="btn btn-success" />
+		<a href="/admin"><input type="submit" value="Cancle" class="btn btn-primary" /></a>
+		<input type="submit" value="Delete" class="btn btn-danger" />
+		
+	</form>
+	
+	
+	
+    </div>
+    <div class="tab-pane" id="tab2">
+    </div>
+    </div>
+    </div>
+    
+
+</div>
+
+	<script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='formUploadProgress.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.form.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.gollum.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='gollum.markdown.js') }}"></script>
+    
+
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+        	//console.log( "ready!" );
+            $('#editor').gollum({
+                uploadURL: '/static/php/fileUpload.php',
+                progressURL: '/static/php/fileProgress.php',
+                uploadProgressName: 'PHP_SESSION_UPLOAD_PROGRESS',
+                progressId: 1,
+            });
+            $('#preview').click(function (e) {
+            	
+            	$.post( "/markdown", { title: $("#title").val(), content: $("#editor").val() })
+            	.done(function( data ) {
+            		$("#tab2").html(data);
+            		//alert( "Data Loaded: " + data );
+            	});
+            	
+            	
+            	
+            	//$.post( "test.php", { name: $("#title").val(), time: $("#editor").val() } );
+            	//$("#tab2").html($("#title").val() + $("#editor").val());
+            	//alert($("#title").val());
+            	  //e.preventDefault()
+            	  //$(this).tab('show')
+            });
+            
+        });
+
+    </script>
+
+</body>
+</html>
+
+{% endif %}
+
+{% endblock %}
+

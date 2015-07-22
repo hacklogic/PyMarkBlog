@@ -1,0 +1,19 @@
+{% include "header.html" %}
+
+<div class="container">
+	
+
+	  {% for entry in result %}
+		<div class="page-header">
+			<h1><a href="/blog/{{ entry[0] }}">{{ entry[1] }}</a></h1>
+		<p class="lead">
+			{{ entry[2]|safe }}
+		</p>
+		</div>
+	
+		 {% else %}
+	    <em>Unbelievable.  No entries here so far</em>
+	  {% endfor %}
+
+</div>
+{% include "footer.html" %}

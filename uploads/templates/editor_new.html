@@ -1,0 +1,50 @@
+
+{% include "header.html" %}
+
+
+
+<div class="container" >  
+
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Writing</a></li>
+    <li><a href="#tab2" data-toggle="tab" id="preview">Preview</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+ 
+    <form  class="form-horizontal"  action="/admin/update" method="post">
+	
+		<h2>Title</h2>
+		
+		<input class="input-xxlarge"  type="text" id="title" name="title">
+		
+		
+		<label class="checkbox">
+		<input type="checkbox" name="navigation" value="yes"> Add to navigation bar?
+		</label>
+
+		<p class="help-block"></p>
+
+
+	    <textarea id="editor" name="content"></textarea>
+		<input type="hidden" name="type"  value="new" />
+        <input type="submit" value="Save" class="btn btn-primary" />
+		<a href="/admin"><input type="submit" value="Cancle" class="btn" /></a>
+
+		
+	</form>
+
+    </div>
+    <div class="tab-pane" id="tab2">
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    
+
+    
+{% include "footer.html" %}
+

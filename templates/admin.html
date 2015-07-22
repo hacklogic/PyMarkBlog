@@ -1,0 +1,57 @@
+ {% include "header.html" %}
+
+
+
+<div class="container">
+
+	<a class="btn btn-primary btn-large" href="/admin/edit/">New Post</a>
+<div id="push"></div>
+
+
+<table class="table">
+
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>navigation</th>
+ 				   <th>Delete</th>
+                  <th></th>
+                </tr>
+              </thead>
+              
+              <tbody>
+            {% for entry in result %}
+                {% if entry[2] |int == 1 %}
+                <tr class="success">
+                <td><a href='/admin/edit/{{ entry[1] }}'> {{ entry[0] }} </a></td>
+                <td><a class="btn btn-success" >navigation</a></td>
+                {% else %} 
+                <tr>
+                <td><a href='/admin/edit/{{ entry[1] }}'> {{ entry[0] }} </a></td>
+                <td></td>
+                {% endif %}
+                  <td><a class="btn btn-danger" href="/admin/del/{{ entry[1] }}">Delete</a></td>
+
+                </tr>
+                
+               {% else %} 
+                <em>Unbelievable. No entries here so far</em> </li>
+ 
+			{% endfor %}
+                
+              </tbody>
+</table>
+            
+            
+   
+
+	
+	
+	
+	
+</div>
+
+
+
+{% include "footer.html" %}
+

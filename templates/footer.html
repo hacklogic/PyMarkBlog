@@ -1,0 +1,58 @@
+<div id="push"></div>
+</div>
+    
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Powered by PymarkBlog <a href="https://github.com/hacklogic">Wenbin Fang</a>.</p>
+      </div>
+    </div>
+
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+
+	<script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='formUploadProgress.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.form.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.gollum.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='gollum.markdown.js') }}"></script>
+    
+        <!-- Placed at the end of the document so the pages load faster -->
+       <script type="text/javascript">
+        $(document).ready(function () {
+        	//console.log( "ready!" );
+
+            $('#editor').gollum({
+                uploadURL: '/admin/upload',
+                progressURL: '/admin/upload_progress',
+                uploadProgressName: 'PHP_SESSION_UPLOAD_PROGRESS',
+                progressId: 1,
+            });
+            
+            $('#preview').click(function (e) {
+            	
+            	$.post( "/markdown", { title: $("#title").val(), content: $("#editor").val() })
+            	.done(function( data ) {
+            		$("#tab2").html(data);
+            		//alert( "Data Loaded: " + data );
+            	});
+            	
+            	
+            	
+            	//$.post( "test.php", { name: $("#title").val(), time: $("#editor").val() } );
+            	//$("#tab2").html($("#title").val() + $("#editor").val());
+            	//alert($("#title").val());
+            	  //e.preventDefault()
+            	  //$(this).tab('show')
+            });
+            
+        });
+
+    </script>
+
+  </body>
+</html>

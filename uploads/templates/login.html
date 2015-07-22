@@ -1,0 +1,35 @@
+ {% include "header.html" %}
+
+
+<div class="container">
+		
+
+  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+    <form class="form-horizontal" action="/login" method="post">
+    <div class="control-group">
+    <label class="control-label" for="inputEmail">Username</label>
+    <div class="controls">
+    <input type="text" id="inputEmail" name="username">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+    <input type="password" id="inputPassword" name="password">
+    </div>
+    </div>
+    <div class="control-group">
+    <div class="controls">
+
+    <button type="submit" class="btn">Sign in</button>
+    </div>
+    </div>
+    </form>
+
+</div>
+
+
+
+{% include "footer.html" %}
+
+
